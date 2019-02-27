@@ -1632,40 +1632,40 @@ class AI_management 		{
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Adds selected units or squads to a map selected garrison";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}";
+			tooltip = "Додає вибраних ботів або підрозділ гарнізону який обрано на карті";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""Не вибрано жодних ботів або підрозділів""}";
 		};
 		class 8slots_R3: RscButton
 		{
 			idc = -1;
-			text = "Squad Add Vehicle"; //--- ToDo: Localize;
+			text = "Додати підрозділу техніку"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Look at some vehicle and assign it to the selected squad for it's use";
+			tooltip = "Додає техніку, на яку ви дивитесь, вибраному підрозділу";
 			action = "closeDialog 0;[] call A3A_fnc_addSquadVeh;";
 		};
 		class 8slots_L4: RscButton
 		{
 			idc = -1;
-			text = "Dismiss Units / Squad"; //--- ToDo: Localize;
+			text = "Звільнити бота/підрозділ"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Dimiss selected units or squads, recovering it's cost to the proper resource pool";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}";
+			tooltip = "Звільнити вибраного бота або підрозділ, відшкодуючи їх вартість";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""Не вибрано жодних ботів або підрозділів""}";
 		};
 		class 8slots_R4: RscButton
 		{
 			idc = -1;
-			text = "Mount / Dismount"; //--- ToDo: Localize;
+			text = "Зайняти/Висадити"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Force squad to mount or dismount their assigned vehicle";
+			tooltip = "Змушити підрозділ зайняти призначену техніку або вийти з неї";
 			action = "[""mount""] call A3A_fnc_vehStats";
 		};
 	};
@@ -1687,7 +1687,7 @@ class commander_comm 		{
 		class 8slots_frame: RscFrame
 		{
 			idc = -1;
-			text = "Commander Battle Options"; //--- ToDo: Localize;
+			text = "Бойове меню Командуючего"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -1707,90 +1707,90 @@ class commander_comm 		{
 		class 8slots_L1: RscButton
 		{
 			idc = -1;
-			text = "Recruit Squad"; //--- ToDo: Localize;
+			text = "Найняти підрозділ"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Recruit new squads and manage them with the HC Module (CTRL + SPACE)";
+			tooltip = "Набирайте нові підрозділи і керуйте ними за допомогою бойового меню (CTRL + SPACE)";
 			action = "closeDialog 0;if (player == theBoss) then {nul= [] execVM ""Dialogs\squad_recruit.sqf""} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_R1: RscButton
 		{
 			idc = -1;
-			text = "Air Support"; //--- ToDo: Localize;
+			text = "Авіапідтримка"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Ask for Air Support (uses Airstrike points)";
+			tooltip = "Запросити Авіапідтримку (використовує очки Авіаудару)";
 			action = "closeDialog 0;if (player == theBoss) then {_nul = createDialog ""carpet_bombing""} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_L2: RscButton
 		{
 			idc = -1;
-			text = "O.Post - Roadblock"; //--- ToDo: Localize;
+			text = "Аванпост/Блокпост"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Establish a new watchpost or roadblock depending on the type of terrain you select";
-			action = "if (player == theBoss) then {closeDialog 0;[""create""] spawn A3A_fnc_puestoDialog} else {hint ""You're not the Commander!""};";
+			tooltip = "Створює новий Спостережний Аванпост або Блокпост, в залежності від обраної місцевості";
+			action = "if (player == theBoss) then {closeDialog 0;[""create""] spawn A3A_fnc_puestoDialog} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_R2: RscButton
 		{
 			idc = -1;
-			text = "Garbage Clean"; //--- ToDo: Localize;
+			text = "Прибрати сміття"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cleans several things in game. Use with caution as it freezes the mission";
+			tooltip = "Видаляє такі речі, як скинуту зброю, магазини, одяг, тощо. Обережно, це підтормажує гру на деякий час";
 			action = "if (player == theBoss) then {closedialog 0;[] remoteExec [""A3A_fnc_garbageCleaner"",2]} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_L3: RscButton
 		{
 			idc = -1;
-			text = "O.Post-Roadblock Delete"; //--- ToDo: Localize;
+			text = "Прибрати Аванпост/Блокпост"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Remove selected observation post or roadblock, money will be refunded";
-			action = "if (player == theBoss) then {closeDialog 0; [""delete""] spawn A3A_fnc_puestoDialog} else {hint ""You're not the Commander!""};";
+			tooltip = "Прибирає вибраний аванпост або блокпост, гроші будуть відшкодовані";
+			action = "if (player == theBoss) then {closeDialog 0; [""delete""] spawn A3A_fnc_puestoDialog} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_R3: RscButton
 		{
 			idc = -1;
-			text = "Faction Garage"; //--- ToDo: Localize;
+			text = "Гараж Фракції"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Look at a vehicle and garage it into faction garage (shared among commanders)";
-			action = "if (player == theBoss) then {closeDialog 0;nul = [true] call A3A_fnc_garageVehicle;} else {hint ""You're not the Commander!""};";
+			tooltip = "Дозволяє поставити обрану техніку в гараж Фракції (загальний для Командуючих)";
+			action = "if (player == theBoss) then {closeDialog 0;nul = [true] call A3A_fnc_garageVehicle;} else {hint ""Доступ до цiєї функцiї має тiльки Командуючий""};";
 		};
 		class 8slots_L4: RscButton
 		{
 			idc = -1;
-			text = "Resign / Eligible"; //--- ToDo: Localize;
+			text = "Подати у відставку"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Step down from commander or toggle eligibility";
-			action = "if (isMultiplayer) then {closedialog 0;execVM ""orgPlayers\commResign.sqf""} else {hint ""This feature is MP Only""};";
+			tooltip = "Подати у відставку або передати командування";
+			action = "if (isMultiplayer) then {closedialog 0;execVM ""orgPlayers\commResign.sqf""} else {hint ""Тільки в Мультіплеєрі""};";
 		};
 		class 8slots_R4: RscButton
 		{
 			idc = -1;
-			text = "Sell Vehicle"; //--- ToDo: Localize;
+			text = "Продати техніку"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Look at a vehicle and sell it for money";
-			action = "if (player == theBoss) then {closeDialog 0; nul = [] call A3A_fnc_sellVehicle} else {hint ""Only the Commander can sell vehicles""};";
+			tooltip = "Продати обрану техніку";
+			action = "if (player == theBoss) then {closeDialog 0; nul = [] call A3A_fnc_sellVehicle} else {hint ""Тільки Командуючий може продавати техніку""};";
 		};
 	};
 };
@@ -1811,7 +1811,7 @@ class carpet_bombing 			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Carpet Bombing Strike"; //--- ToDo: Localize;
+			text = "Килимове бомбардування"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -1830,45 +1830,45 @@ class carpet_bombing 			{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "HE Bombs"; //--- ToDo: Localize;
+			text = "Фугасні бомби"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cost: 1 point";
+			tooltip = "Ціна: 1 пункт";
 			action = "closeDialog 0;[""HE""] spawn A3A_fnc_NATObomb;";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Carpet Bombing"; //--- ToDo: Localize;
+			text = "Килимове бомбардування"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cost: 1 point";
+			tooltip = "Ціна: 1 пункт";
 			action = "closeDialog 0;[""CARPET""] spawn A3A_fnc_NATObomb;";
 		};
 		class 4slots_L2: RscButton
 		{
 			idc = -1;
-			text = "NAPALM Bomb"; //--- ToDo: Localize;
+			text = "Напалмові бомби"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cost: 1 point";
+			tooltip = "Ціна: 1 пункт";
 			action = "closeDialog 0;[""NAPALM""] spawn A3A_fnc_NATObomb;";
 		};
 		class 4slots_R2: RscButton
 		{
 			idc = -1;
-			text = "Add to Air Support"; //--- ToDo: Localize;
+			text = "Додати до Авйапідтримки"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Gain Airstrike points giving this aircraft to the faction Air pool";
+			tooltip = "Додає вибраний авіатранспорт до очків Авіаудару";
 			action = "closeDialog 0;nul = [] call A3A_fnc_addBombRun";
 		};
 	};
@@ -1892,7 +1892,7 @@ class dismiss_menu 				{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Dismiss Options"; //--- ToDo: Localize;
+			text = "Звільнення"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -1901,13 +1901,13 @@ class dismiss_menu 				{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Dismiss Units / Squad"; //--- ToDo: Localize;
+			text = "Звільнити ботів/Підрозділ"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Dimiss selected units or squads, recovering it's cost to the proper resource pool";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}";
+			tooltip = "Звільняє вибраного бота або підрозділ, відшкодуючи їх вартість";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\dismissPlayerGroup.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\dismissSquad.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""Не вибрано жодних ботів або підрозділів""}";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
@@ -1917,8 +1917,8 @@ class dismiss_menu 				{
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Adds selected units or squads to a map selected garrison";
-			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""No units or squads selected""}";
+			tooltip = "Додає вибраних ботів або підрозділ до Гарнізону обраного на карті";
+			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] execVM ""REINF\addToGarrison.sqf""} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] execVM ""REINF\addToGarrison.sqf""}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {hint ""Не вибрано жодних ботів або підрозділів""}";
 		};
 		/*
 		class HQ_button_Gremove: RscButton
@@ -1951,7 +1951,7 @@ class construction_menu 	{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Construction Menu"; //--- ToDo: Localize;
+			text = "Будування"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -1970,46 +1970,46 @@ class construction_menu 	{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Small Trench"; //--- ToDo: Localize;
+			text = "Малий окоп"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Make a quick small trench for one man";
+			tooltip = "Створює малий окоп на одну людину";
 			action = "closeDialog 0;nul = [""ST""] spawn A3A_fnc_construir;";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Medium Trench"; //--- ToDo: Localize;
+			text = "Середній окоп"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "A mid sized trench with capabilities for more than one soldier";
+			tooltip = "Додає середній окоп для більш ніж одного солдата";
 			action = "closeDialog 0; nul = [""MT""] spawn A3A_fnc_construir;";
 		};
 
 		class HQ_button_Gremove: RscButton
 		{
 			idc = -1;
-			text = "Vehicle obstacles"; //--- ToDo: Localize;
+			text = "Блокувати дорогу"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Build some obstacles for vehicles";
+			tooltip = "Створює деякі перешкоди для транспортних засобів";
 			action = "closeDialog 0;nul = [""RB""] spawn A3A_fnc_construir;";
 		};
 		class HQ_button_unlock: RscButton
 		{
 			idc = -1;
-			text = "Bunker Options"; //--- ToDo: Localize;
+			text = "Побудувати Бункер"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Need to be built in garrison controlled zones and cost money";
+			tooltip = "Має бути побудованим в Гарнізоні контрольованої зони, коштує грошей";
 			action = "closeDialog 0;nul = createDialog ""bunker_menu""";
 		};
 	};
@@ -2032,7 +2032,7 @@ class bunker_menu 				{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select Bunker Type"; //--- ToDo: Localize;
+			text = "Тип Бункеру"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2041,23 +2041,23 @@ class bunker_menu 				{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Sandbag Bunker"; //--- ToDo: Localize;
+			text = "Бункер з мешків"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Requires to be in a garrisoned zone. It will be permanent";
+			tooltip = "Має бути побудованим в зоні Гарнізону. Він буде постійним";
 			action = "closeDialog 0;nul = [""SB""] spawn A3A_fnc_construir;";
 		};
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Concrete Bunker"; //--- ToDo: Localize;
+			text = "Бетонний бункер"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Requires to be in a garrisoned zone. It will be permanent";
+			tooltip = "Має бути побудованим в зоні Гарнізону. Він буде постійним";
 			action = "closeDialog 0;nul = [""CB""] spawn A3A_fnc_construir;";
 		};
 		/*
@@ -2091,7 +2091,7 @@ class squad_recruit 			{
 		class HQ_frame: RscFrame
 		{
 			idc = 102;
-			text = "Squad Recruitment Options"; //--- ToDo: Localize;
+			text = "Наймання Підрозділів"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2110,7 +2110,7 @@ class squad_recruit 			{
 		class HQ_button_infsquad: RscButton
 		{
 			idc = 104;
-			text = "Recruit Inf. Squad"; //--- ToDo: Localize;
+			text = "Піхотне відділення"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2120,7 +2120,7 @@ class squad_recruit 			{
 		class HQ_button_infteam: RscButton
 		{
 			idc = 105;
-			text = "Recruit Inf. Team"; //--- ToDo: Localize;
+			text = "Вогнева група"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2130,7 +2130,7 @@ class squad_recruit 			{
 		class HQ_button_ATteam: RscButton
 		{
 			idc = 106;
-			text = "Recruit AT Team"; //--- ToDo: Localize;
+			text = "Протитанкова група"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2140,7 +2140,7 @@ class squad_recruit 			{
 		class HQ_button_sniperTeam: RscButton
 		{
 			idc = 107;
-			text = "Recruit Sniper Team"; //--- ToDo: Localize;
+			text = "Снайперська група"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2150,7 +2150,7 @@ class squad_recruit 			{
 		class HQ_button_infsquadM: RscButton
 		{
 			idc = 108;
-			text = "Recruit MG Team"; //--- ToDo: Localize;
+			text = "Кулеметна група"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2160,7 +2160,7 @@ class squad_recruit 			{
 		class HQ_button_infteamM: RscButton
 		{
 			idc = 109;
-			text = "Recruit AT Car"; //--- ToDo: Localize;
+			text = "Протитанкова автівка"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2170,7 +2170,7 @@ class squad_recruit 			{
 		class HQ_button_ATteamM: RscButton
 		{
 			idc = 110;
-			text = "Recruit AA Truck"; //--- ToDo: Localize;
+			text = "Автівка з ППО"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2181,7 +2181,7 @@ class squad_recruit 			{
 		class HQ_button_mortar: RscButton
 		{
 			idc = 111;
-			text = "Recruit Mortar Team"; //--- ToDo: Localize;
+			text = "Минометна група"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2232,7 +2232,7 @@ class player_money 			{
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Використовуйте цей параметр, щоб додати гравця на якого ви дивитесь до списку учасникiв";
-			action = "if (isMultiplayer) then {closeDialog 0;nul = [""add""] call A3A_fnc_memberAdd;} else {hint ""This function is MP only""};";
+			action = "if (isMultiplayer) then {closeDialog 0;nul = [""add""] call A3A_fnc_memberAdd;} else {hint ""Тільки в Мультіплеєрі""};";
 		};
 		class HQ_button_MG: RscButton
 		{
@@ -2242,12 +2242,12 @@ class player_money 			{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "if (isMultiplayer) then {closeDialog 0;nul = [""remove""] call A3A_fnc_memberAdd;} else {hint ""This function is MP only""};";
+			action = "if (isMultiplayer) then {closeDialog 0;nul = [""remove""] call A3A_fnc_memberAdd;} else {hint ""Тільки в Мультіплеєрі""};";
 		};
 		class HQ_button_AT: RscButton
 		{
 			idc = -1;
-			text = "Donate 100 € to player"; //--- ToDo: Localize;
+			text = "Передати 100€ гравцю"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2257,12 +2257,12 @@ class player_money 			{
 		class HQ_button_AA: RscButton
 		{
 			idc = -1;
-			text = "Donate 100 € to Faction"; //--- ToDo: Localize;
+			text = "Передати 100€ у Фракцію"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "It will increase your prestige among your faction";
+			tooltip = "Це збільшить ваш престиж у Фракції";
 			action = "[] call A3A_fnc_donateMoney;";
 		};
 	};
@@ -2284,7 +2284,7 @@ class garage_sell 			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Sell or Garage Vehicle"; //--- ToDo: Localize;
+			text = "Продати/Поставити в Гараж"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2303,7 +2303,7 @@ class garage_sell 			{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Garage Vehicle"; //--- ToDo: Localize;
+			text = "Поставити в Гараж"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2313,12 +2313,12 @@ class garage_sell 			{
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Sell Vehicle"; //--- ToDo: Localize;
+			text = "Продати техніку"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0; if (player == theBoss) then {nul = [] call A3A_fnc_sellVehicle} else {hint ""Only the Commander can sell vehicles""};";
+			action = "closeDialog 0; if (player == theBoss) then {nul = [] call A3A_fnc_sellVehicle} else {hint ""Тільки Командуючий може продавати техніку""};";
 		};
 		/*
 		class HQ_button_Gremove: RscButton
@@ -2352,7 +2352,7 @@ class garage_check 				{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Personal or Faction Garage?"; //--- ToDo: Localize;
+			text = "Персональний гараж чи Гараж Фракції?"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2371,7 +2371,7 @@ class garage_check 				{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Personal Garage"; //--- ToDo: Localize;
+			text = "Персональний гараж"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2381,7 +2381,7 @@ class garage_check 				{
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Faction Garage"; //--- ToDo: Localize;
+			text = "Гараж Фракції"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2419,7 +2419,7 @@ class tu_madre 				{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Carpet Bombing Strike"; //--- ToDo: Localize;
+			text = "Килимове бомбардування"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2449,7 +2449,7 @@ class tu_madre 				{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "HE Bombs"; //--- ToDo: Localize;
+			text = "Фугасні бомби"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2460,7 +2460,7 @@ class tu_madre 				{
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Carpet Bombing"; //--- ToDo: Localize;
+			text = "Килимове бомбардування"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2472,7 +2472,7 @@ class tu_madre 				{
 		class HQ_button_Gremove: RscButton
 		{
 			idc = -1;
-			text = "NAPALM Bomb"; //--- ToDo: Localize;
+			text = "Напалмові бомби"; //--- ToDo: Localize;
 			x = 0.37749 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2503,7 +2503,7 @@ class mortar_type {
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select Mortar Ammo"; //--- ToDo: Localize;
+			text = "Боєприпаси міномету"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2522,7 +2522,7 @@ class mortar_type {
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "HE"; //--- ToDo: Localize;
+			text = "Фугасні"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2532,7 +2532,7 @@ class mortar_type {
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Smoke"; //--- ToDo: Localize;
+			text = "Димові"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2570,7 +2570,7 @@ class rounds_number {
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select No. Rounds to be fired"; //--- ToDo: Localize;
+			text = "Кількість пострілів"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2686,7 +2686,7 @@ class strike_type {
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select type of strike"; //--- ToDo: Localize;
+			text = "Тип вогню"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2705,7 +2705,7 @@ class strike_type {
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Single Point Strike"; //--- ToDo: Localize;
+			text = "Вогонь по цілі"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2715,7 +2715,7 @@ class strike_type {
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Barrage Strike"; //--- ToDo: Localize;
+			text = "Загороджувальний вогонь"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2755,7 +2755,7 @@ class NATO_player {
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "SpecOp Menu"; //--- ToDo: Localize;
+			text = "Меню спецназу"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2774,7 +2774,7 @@ class NATO_player {
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "Quadbike"; //--- ToDo: Localize;
+			text = "Квадроцикл"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2784,7 +2784,7 @@ class NATO_player {
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Fast Travel"; //--- ToDo: Localize;
+			text = "Швидке переміщення"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2813,7 +2813,7 @@ class mbt_type {
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select type ammo for the strike"; //--- ToDo: Localize;
+			text = "Оберіть тип боєприпасів для удару"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2832,7 +2832,7 @@ class mbt_type {
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = -1;
-			text = "HE"; //--- ToDo: Localize;
+			text = "Фугасні"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2842,7 +2842,7 @@ class mbt_type {
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = -1;
-			text = "Laser Guided"; //--- ToDo: Localize;
+			text = "Керовані лазером"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2853,7 +2853,7 @@ class mbt_type {
 		class HQ_button_Gremove: RscButton
 		{
 			idc = -1;
-			text = "Smoke"; //--- ToDo: Localize;
+			text = "Димові"; //--- ToDo: Localize;
 			x = 0.37749 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2879,7 +2879,7 @@ class squad_options 	{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Squad Options"; //--- ToDo: Localize;
+			text = "Опції відділення"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2898,7 +2898,7 @@ class squad_options 	{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = 104;
-			text = "Normal Squad"; //--- ToDo: Localize;
+			text = "Піхотне відділення"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2909,7 +2909,7 @@ class squad_options 	{
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = 105;
-			text = "Engineer Squad"; //--- ToDo: Localize;
+			text = "Інженерне відділення"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2920,7 +2920,7 @@ class squad_options 	{
 		class HQ_button_Gremove: RscButton
 		{
 			idc = 106;
-			text = "MG Squad"; //--- ToDo: Localize;
+			text = "Кулеметне відділення"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2930,7 +2930,7 @@ class squad_options 	{
 		class HQ_button_unlock: RscButton
 		{
 			idc = 107;
-			text = "Mortar Squad"; //--- ToDo: Localize;
+			text = "Мінометне відділення"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2956,7 +2956,7 @@ class diff_menu 			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Choose difficulty"; //--- ToDo: Localize;
+			text = "Складність"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2965,7 +2965,7 @@ class diff_menu 			{
 		class HQ_button_mortar: RscButton
 		{
 			idc = -1;
-			text = "Easy"; //--- ToDo: Localize;
+			text = "Легко"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2975,7 +2975,7 @@ class diff_menu 			{
 		class HQ_button_MG: RscButton
 		{
 			idc = -1;
-			text = "Normal"; //--- ToDo: Localize;
+			text = "Звичайно"; //--- ToDo: Localize;
 			x = 0.37749 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -2985,7 +2985,7 @@ class diff_menu 			{
 		class HQ_button_AT: RscButton
 		{
 			idc = -1;
-			text = "Hard"; //--- ToDo: Localize;
+			text = "Важко"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -3012,7 +3012,7 @@ class gameMode_menu 			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Select your Game Mode"; //--- ToDo: Localize;
+			text = "Режим гри"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -3021,7 +3021,7 @@ class gameMode_menu 			{
 		class HQ_button_Gsquad: RscButton
 		{
 			idc = 104;
-			text = "Reb vs Gov vs Inv"; //--- ToDo: Localize;
+			text = "Повстанці проти Влади проти Окупантів. Всі проти всіх."; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -3031,7 +3031,7 @@ class gameMode_menu 			{
 		class HQ_button_Gstatic: RscButton
 		{
 			idc = 105;
-			text = "Rev vs Gov & Inv"; //--- ToDo: Localize;
+			text = "Повстанці проти Влади з Окупантами"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
@@ -3041,7 +3041,7 @@ class gameMode_menu 			{
 		class HQ_button_Gremove: RscButton
 		{
 			idc = 106;
-			text = "Reb vs Gov"; //--- ToDo: Localize;
+			text = "Повстанці проти Влади"; //--- ToDo: Localize;
 			//x = 0.37749 * safezoneW + safezoneX;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
@@ -3052,7 +3052,7 @@ class gameMode_menu 			{
 		class HQ_button_offroad: RscButton
 		{
 			idc = 107;
-		 	text = "Reb vs Inv"; //--- ToDo: Localize;
+		 	text = "Партизани проти Окупантів"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 		 	y = 0.415981 * safezoneH + safezoneY;
 		 	w = 0.175015 * safezoneW;
